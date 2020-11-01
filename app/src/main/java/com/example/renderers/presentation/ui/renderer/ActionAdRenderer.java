@@ -6,7 +6,7 @@ import com.example.renderers.domain.model.Ad;
 
 import butterknife.OnClick;
 
-public class ActionAdRenderer extends AdRenderer {
+public class ActionAdRenderer extends AdsRenderer {
 
     private Listener showItemListener;
 
@@ -20,13 +20,13 @@ public class ActionAdRenderer extends AdRenderer {
     }
 
     @OnClick(R.id.btnShowMore)
-    void clickOnDelete() {
-        showItemListener.onShowMoreButtonClicked(getContent());
+    void clickShowMore() {
+        showItemListener.onShowMoreButtonClicked((Ad) getContent());
     }
 
     @OnClick(R.id.cvAd)
     void onAdClicked() {
-        showItemListener.onShowMoreButtonClicked(getContent());
+        showItemListener.onShowMoreButtonClicked((Ad) getContent());
     }
 
 }

@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    android:id="@+id/cvProduct"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvProduct"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
     app:cardBackgroundColor="@android:color/white"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    app:cardCornerRadius="15dp"
+    app:cardElevation="4dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/ivPhoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:background="@drawable/placeholder" />
+       <include
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           layout="@layout/publication_renderer"/>
 
         <LinearLayout
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:orientation="horizontal"
             android:weightSum="2"
             android:layout_width="match_parent"
@@ -49,19 +48,7 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sófa cama LIQUIDACIÓN"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:textStyle="normal" />
-
     </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

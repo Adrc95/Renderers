@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.renderers.R;
-import com.example.renderers.domain.model.Product;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,11 +33,6 @@ public class ProminentProductRenderer extends ProductRenderer {
         /*
          * Empty implementation substituted with the usage of ButterKnife library by Jake Wharton.
          */
-    }
-
-    @Override
-    protected void renderLike(Product product) {
-
     }
 
     private void renderProminent() {

@@ -11,7 +11,7 @@ import com.example.renderers.domain.model.Ad;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HeaderAdsRenderer extends AdRenderer {
+public class HeaderAdsRenderer extends AdsRenderer {
 
     @BindView(R.id.tvHeader)
     TextView tvHeader;
@@ -38,7 +38,7 @@ public class HeaderAdsRenderer extends AdRenderer {
 
 
     private void renderHeader() {
-        Ad ad = getContent();
+        Ad ad = (Ad) getContent();
         tvHeader.setText(ad.getTitleHeader());
     }
 }

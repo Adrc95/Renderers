@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="15dp"
-    app:cardBackgroundColor="@android:color/white"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/placeholder"
+                android:scaleType="centerCrop" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:background="@drawable/placeholder"
-            />
-
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                tools:text="Sófa cama LIQUIDACIÓN"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+</merge>

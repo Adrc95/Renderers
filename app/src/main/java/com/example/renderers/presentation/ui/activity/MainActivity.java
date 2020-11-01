@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.renderers.R;
@@ -13,20 +12,20 @@ import com.example.renderers.domain.executor.imp.ThreadExecutor;
 import com.example.renderers.domain.model.Ad;
 import com.example.renderers.domain.model.Product;
 import com.example.renderers.domain.model.Publication;
-import com.example.renderers.domain.model.RandomPublicationCollectionGenerator;
 import com.example.renderers.domain.threading.imp.MainThreadImp;
 import com.example.renderers.presentation.presenter.MainPresenter;
 import com.example.renderers.presentation.presenter.imp.MainPresenterImp;
+import com.example.renderers.presentation.ui.builder.PublicationsRendererBuilder;
+import com.example.renderers.presentation.ui.renderer.ActionAdRenderer;
+import com.example.renderers.presentation.ui.renderer.AdsRenderer;
 import com.example.renderers.presentation.ui.renderer.HeaderAdsRenderer;
-import com.example.renderers.presentation.ui.renderer.LikeProductRenderer;
+import com.example.renderers.presentation.ui.renderer.ProductRenderer;
 import com.example.renderers.presentation.ui.renderer.ProminentProductRenderer;
-import com.pedrogomez.renderers.AdapteeCollection;
+import com.example.renderers.presentation.ui.renderer.PublicationRenderer;
 import com.pedrogomez.renderers.ListAdapteeCollection;
 import com.pedrogomez.renderers.RVRendererAdapter;
 import com.pedrogomez.renderers.RendererBuilder;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import butterknife.BindView;
@@ -59,12 +58,8 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Vie
     }
 
     private void initAdapter() {
-        RendererBuilder<Publication> rendererBuilder = new RendererBuilder<Publication>()
-                .bind(Product.class, new ProminentProductRenderer())
-                .bind(Product.class, new LikeProductRenderer())
-                .bind(Ad.class, new HeaderAdsRenderer());
-
-        adapter = new RVRendererAdapter<>(rendererBuilder, new ListAdapteeCollection<>());
+        PublicationsRendererBuilder publicationsRendererBuilder = new PublicationsRendererBuilder();
+        adapter = new RVRendererAdapter<>(publicationsRendererBuilder, new ListAdapteeCollection<>());
     }
 
     @Override

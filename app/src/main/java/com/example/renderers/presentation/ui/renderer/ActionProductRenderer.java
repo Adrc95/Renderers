@@ -9,11 +9,6 @@ public class ActionProductRenderer extends ProductRenderer {
 
     private Listener likeItemListener;
 
-    @Override
-    protected void renderLike(Product product) {
-
-    }
-
     public interface Listener {
 
         void onLikeProductCLicked(Product product);
@@ -27,6 +22,6 @@ public class ActionProductRenderer extends ProductRenderer {
     void clickOnLike() {
         //getContent().setLike(!getContent().isLike());
         //renderMarker(getContent());
-        likeItemListener.onLikeProductCLicked(getContent());
+        likeItemListener.onLikeProductCLicked((Product) getContent());
     }
 }
